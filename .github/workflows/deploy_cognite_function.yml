@@ -13,5 +13,6 @@ jobs:
           cdf_deployment_credentials: ${{ secrets.COGNITE_FUNCTION_CREDENTIALS }}
           cdf_runtime_credentials: ${{ secrets.COGNITE_FUNCTION_CREDENTIALS }}
           function_file: handler.py
-          function_folder: folder1/folder2
+          common_folder: folder1
+          function_folder: folder2
     
