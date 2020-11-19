@@ -1,8 +1,19 @@
-uses: cognitedata/function-action@v2
-with:
-    function_name: my_hello_function_${{ github.ref }}
-    cdf_deployment_credentials: ${{ secrets.COGNITE_FUNCTION_CREDENTIALS }}
-    cdf_runtime_credentials: ${{ secrets.COGNITE_FUNCTION_CREDENTIALS }}
-    function_file: handler.py
-    function_folder: folder1/folder2
+  name: Deploy Cognite Function
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      uses: cognitedata/function-action@v2
+      with:
+          function_name: my_hello_function_${{ github.ref }}
+          cdf_deployment_credentials: ${{ secrets.COGNITE_FUNCTION_CREDENTIALS }}
+          cdf_runtime_credentials: ${{ secrets.COGNITE_FUNCTION_CREDENTIALS }}
+          function_file: handler.py
+          function_folder: folder1/folder2
     
