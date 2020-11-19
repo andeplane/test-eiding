@@ -7,6 +7,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - uses: cognitedata/function-action@v2
       with:
           function_name: my_hello_function_${{ github.ref }}
