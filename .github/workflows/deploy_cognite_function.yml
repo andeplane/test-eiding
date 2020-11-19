@@ -7,7 +7,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      uses: cognitedata/function-action@v2
+    - uses: cognitedata/function-action@v2
       with:
           function_name: my_hello_function_${{ github.ref }}
           cdf_deployment_credentials: ${{ secrets.COGNITE_FUNCTION_CREDENTIALS }}
